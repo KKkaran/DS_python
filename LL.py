@@ -15,14 +15,23 @@ class LL:
 
     def appendToLL(self, value):
         temp = Node(value)
-        oldTail = self.tail
-        oldTail.next = temp
-        self.tail = temp
         self.count += 1
+        if self.head is None:
+            self.head = temp
+            self.tail = temp
+        else:
+            self.tail.next = temp
+            self.tail = temp
+
+    def popFromLL(self):
+        temp = self.head
+        
+
 
 
 ll = LL(4)
 ll.appendToLL(55)
-ll.printLL()
+ll.appendToLL(11)
+ll.appendToLL(23)
+#ll.printLL()
 print(ll.tail.value)
-print(ll.count)
